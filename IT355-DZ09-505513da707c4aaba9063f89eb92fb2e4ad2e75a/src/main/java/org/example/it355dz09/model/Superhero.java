@@ -1,8 +1,8 @@
 package org.example.it355dz09.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,11 +54,11 @@ public class Superhero {
 
     @Basic
     @Column(name = "height_cm")
-    private Integer heightCm; // Change from int to Integer
+    private int heightCm;
 
     @Basic
     @Column(name = "weight_kg")
-    private Integer weightKg; // Change from int to Integer
+    private int weightKg;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "hero_power",
@@ -69,7 +69,7 @@ public class Superhero {
     public Superhero() {
     }
 
-    public Superhero(int id, String superHeroName, String fullName, Gender gender, Colour eyeColour, Colour hairColour, Colour skinColour, Race race, Publisher publisher, Alignment alignment, Integer heightCm, Integer weightKg, List<Superpower> superpower) {
+    public Superhero(int id, String superHeroName, String fullName, Gender gender, Colour eyeColour, Colour hairColour, Colour skinColour, Race race, Publisher publisher, Alignment alignment, int heightCm, int weightKg, List<Superpower> superpower) {
         this.id = id;
         this.superHeroName = superHeroName;
         this.fullName = fullName;
@@ -165,19 +165,19 @@ public class Superhero {
         this.alignment = alignment;
     }
 
-    public Integer getHeightCm() {
+    public int getHeightCm() {
         return heightCm;
     }
 
-    public void setHeightCm(Integer heightCm) {
+    public void setHeightCm(int heightCm) {
         this.heightCm = heightCm;
     }
 
-    public Integer getWeightKg() {
+    public int getWeightKg() {
         return weightKg;
     }
 
-    public void setWeightKg(Integer weightKg) {
+    public void setWeightKg(int weightKg) {
         this.weightKg = weightKg;
     }
 
